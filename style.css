@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap");
+
+:root {
+  --brand-dark: #111111;
+  --brand-accent: #ff7a00;
+  --hero-height: 70vh;
+}
+
+body {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  color: #1b1b1b;
+}
+
+h1,
+h2,
+h3,
+.navbar-brand {
+  font-family: "Playfair Display", "Source Sans 3", serif;
+}
+
+.brand-logo {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  background: var(--brand-accent);
+  color: #0f0f0f;
+  border-radius: 50%;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.hero-image {
+  height: var(--hero-height);
+  object-fit: cover;
+}
+
+.food-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.chef-image {
+  height: 260px;
+  object-fit: cover;
+}
+
+.stall-image {
+  height: 220px;
+  object-fit: cover;
+}
+
+.stall-card {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stall-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+}
+
+.btn-primary {
+  background-color: var(--brand-accent);
+  border-color: var(--brand-accent);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #ff8f26;
+  border-color: #ff8f26;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --hero-height: 60vh;
+  }
+
+  .carousel-caption {
+    text-align: left;
+  }
+
+  .food-image {
+    height: 200px;
+  }
+
+  .chef-image {
+    height: 230px;
+  }
+
+  .stall-image {
+    height: 200px;
+  }
+}
