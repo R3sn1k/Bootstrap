@@ -9,6 +9,7 @@
   --accent-500: #ef5b2f;
   --accent-600: #dd4d23;
   --hero-height: 76vh;
+  --hero-min-height: 420px;
 }
 
 body {
@@ -56,13 +57,26 @@ h3,
   box-shadow: 0 6px 14px rgba(24, 72, 82, 0.34);
 }
 
-.hero-image {
+#heroCarousel .carousel-item {
   height: var(--hero-height);
+  min-height: var(--hero-min-height);
+}
+
+.hero-image {
+  width: 100%;
+  height: var(--hero-height);
+  min-height: var(--hero-min-height);
   object-fit: cover;
+  object-position: center;
   filter: saturate(1.05) contrast(1.02);
 }
 
 .carousel-caption {
+  right: auto;
+  left: 8%;
+  bottom: 12%;
+  width: min(620px, 84%);
+  text-align: left;
   background:
     linear-gradient(115deg, rgba(14, 31, 41, 0.82), rgba(21, 49, 63, 0.74));
   border: 1px solid rgba(255, 255, 255, 0.16);
@@ -70,6 +84,27 @@ h3,
   padding: 1.4rem 1.6rem;
   border-radius: 1rem;
   box-shadow: 0 16px 30px rgba(8, 18, 24, 0.35);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 8%;
+  opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 3.1rem;
+  height: 3.1rem;
+  border-radius: 999px;
+  background-color: rgba(14, 31, 41, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.82);
+  background-size: 55% 55%;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  background-color: rgba(14, 31, 41, 0.95);
 }
 
 .btn-primary {
@@ -164,21 +199,40 @@ footer a.text-light:hover {
 @media (max-width: 992px) {
   :root {
     --hero-height: 64vh;
+    --hero-min-height: 360px;
   }
 
   .carousel-caption {
-    text-align: left;
-    max-width: 90%;
+    left: 6%;
+    bottom: 10%;
+    width: min(560px, 90%);
   }
 }
 
 @media (max-width: 768px) {
   :root {
     --hero-height: 56vh;
+    --hero-min-height: 300px;
   }
 
   .chef-image,
   .stall-image {
     height: 220px;
+  }
+
+  .carousel-caption {
+    left: 5%;
+    right: 5%;
+    bottom: 8%;
+    width: auto;
+    padding: 1rem;
+  }
+
+  .carousel-caption h1 {
+    font-size: 1.55rem;
+  }
+
+  .carousel-caption .lead {
+    font-size: 1rem;
   }
 }
